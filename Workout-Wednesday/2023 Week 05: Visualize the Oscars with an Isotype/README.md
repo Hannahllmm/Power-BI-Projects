@@ -41,7 +41,7 @@ Next I created a couple of measures. Firstly I created a Nominations measure to 
 ```
 Nominations = COUNT(oscar_awards[name])
 ```
-The other measure Selected Categories, outputs text which is isused to create part of the title on the page. This dynamically changes dependant on what the user has selected. 
+The other measure Selected Categories, puts text which is isused to create part of the title on the page. This dynamically changes dependant on what the user has selected. 
 ```
 Selected Category = 
 IF(
