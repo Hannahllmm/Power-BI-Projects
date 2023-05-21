@@ -31,4 +31,40 @@ This is how the tables are connected to each other:
 
 
 ### Set-Up
-Once the data was loaded in and in the desired format, I created the measures needed.
+Once the data was loaded in and in the desired format, I created the measures needed. I started by creating a measure to sum together the values.
+```
+Character Value = 
+SUM(Characters[Value])
+```
+I then used this measure to create a ranking measure that ranked the characters based on the user selections.
+```
+Character Rank = 
+RANKX(
+    ALLSELECTED(Characters[Character]),
+    [Character Value],
+    ,
+    ,
+    Dense)
+```
+
+I created the same measure for each of the other tables. I then created an overall value measure and rank measure which summed together the outputs of each of the variables. 
+
+The first report page only looks at the characters table so I created a parameter to use in both the visuals that switches between the value and the rak. The user can then select which they are interested in. 
+```
+Character Parameter = {
+    ("Character Rank", NAMEOF('Characters'[Character Rank]), 0),
+    ("Character Value", NAMEOF('Characters'[Character Value]), 1)
+    
+```
+
+The other slicer on the first page is the character weight so the user can look at combinations of heavy/light/medium weights. The first visual shows the values per attribute for each mario character. I added in the weighted colour in the background so the user can quickly see what is driving the overall value. 
+![image](https://github.com/Hannahllmm/Power-BI-Projects/assets/39679731/ad6ae93c-926d-4f13-93de-06cb71c4f8d1)
+
+
+The second visual shows the percentage each attribution makes up of the overall attribute. It shows the same data as the other visual but sometimes it's easier to see which attribute is weighted the highest based on area rather than colour.
+![image](https://github.com/Hannahllmm/Power-BI-Projects/assets/39679731/de7025d6-6edc-42c2-ba2b-75410f6576e1)
+
+The second page allows user so test out making kart selections to see how that affects the over all values. Again I created a parameter, this time to switch between the overall value and rank so the user can switch between the two. I used the same table visual as on the previous page, this time there are more slicers for the suer to choose from.
+
+![image](https://github.com/Hannahllmm/Power-BI-Projects/assets/39679731/4b5b14a2-4e32-4f41-966e-dd3a522980e4)
+
