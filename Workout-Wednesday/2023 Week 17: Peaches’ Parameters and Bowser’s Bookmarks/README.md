@@ -14,7 +14,7 @@ This is the first page of the report:
 
 This is the second page:
 
-![image](https://github.com/Hannahllmm/Power-BI-Projects/assets/39679731/307a1a89-bc6d-4fb6-a5af-f074919f81ea)
+![image](https://github.com/Hannahllmm/Power-BI-Projects/assets/39679731/72146bb1-5b9a-4048-92d5-04b6142768cb)
 
 ### Data Transformation
 
